@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UVstore</title>
+     <!-- connect to css-->
+     <link rel="stylesheet" href="account.css">
+     <!-- connect js -->
+      <script type="text/javascript" src="account.js" defer></script>
+     <!-- bootstrap css and js -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="background">
+    
+ <!-- navbar -->
+ <div class="navbar fixed-top">
+    <ul>
+      
+      <li class="details-user"  id="logout-li" >
+
+      
+     </li>
+
+        <div class="d-flex text-nowrap justify-content-end">
+          
+        </div>
+
+     <li><img onclick="location.href='header.html'" class="logo-r" src="logo-removebg-preview.png"></li>
+
+    </ul>
+</div>
+<!-- end navbar -->
+
+
+ <!-- sidebar -->
+ <nav id="sidebar">
+    <ul>
+        <li>
+           <button onclick=togglesubmenu(this) class="dropdown_btn" id="b1">
+              <div><i style="color: #00b4be;"  class="bi bi-cart4"></i></div>
+              <span>المنتجات</span>
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+           </button>
+    
+      <ul class="sub-menu">
+          <div>
+             <li ><a  onclick="location.href='header.html'"><i style="color: #00b4be;" class="bi bi-infinity"></i>كل الاقسام</a></li>
+             <li ><a  data-bs-toggle="modal" data-bs-target="#postModal" href="#"><i style="color: #00b4be;" class="bi bi-plus-circle"></i>أضافة منتج</a></li>
+             <li><a onclick="location.href='my-project.html'" href="#"><i style="color: #00b4be;" class="bi bi-backpack-fill"></i>منتجاتي</a></li>
+          </div>
+      </ul>
+        </li>
+    
+         <li>
+           <button onclick=togglesubmenu(this) class="dropdown_btn" id="b2">
+                <div><i style="color: #00b4be;" class="bi bi-person"></i></div>
+                <span>الخدمات</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+           </button>
+      <ul class="sub-menu">
+    
+          <div>
+                <li><a onclick="location.href='study.html'" href="#"><i style="color: #00b4be;" class="bi bi-book"></i>تبادل الكتب</a></li>
+                <li><a onclick="location.href='ff-main/mo.html'" href="#"><i style="color: #00b4be;" class="bi bi-bag-x-fill"></i>المفقودات</a></li>
+          </div>
+      </ul>
+        </li>
+    
+        <li>
+          <button onclick=togglesubmenu(this) class="dropdown_btn" id="b3">
+                 <div> <i style="color: #00b4be;" class="bi bi-gear"></i></div>
+                 <span>الاعدادات</span>
+                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+          </button>
+        <ul class="sub-menu">
+          <div>
+            <li><a onclick="location.href='account.html'" href="#"><i style="color: #00b4be;" class="bi bi-person-circle"></i>حسابي</a></li>
+            <li><a href="#"><i style="color: #00b4be;" class="bi bi-moon-fill"></i>الوضع</a></li>
+          </div>
+</ul>
+</li> 
+</ul>
+</nav> 
+
+<!-- end sidebar -->
+
+
+
+<!-- Modal -->
+
+<div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="postModalLabel">إنشاء منشور جديد</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="modalPostForm" class="form-group">
+                    
+                    <div class="mt-3">
+                        <label for="modalDescriptionInput">الوصف</label>
+                        <textarea 
+                            id="modalDescriptionInput"
+                            class="form-control" 
+                            placeholder="أدخل وصف المفقود" 
+                            rows="4" 
+                            required
+                        ></textarea>
+                    </div>
+                    
+                    <!-- تحميل الصور -->
+                    <div class="form-group">
+                        <label for="modalImageInput">صور المفقودات</label>
+                        <div class="upload-container" onclick="document.getElementById('modalImageInput').click()">
+                        <i id="uploadIcon" class="bi bi-upload upload-icon"></i>
+                        <img id="imagePreview" class="image-preview" src="" alt="Preview">
+                        </div>
+                        <input type="file" id="modalImageInput" accept="image/*" multiple>
+                    </div>
+
+                    <!-- عرض الصور المضافة -->
+                    <div class="images-container" id="imagesContainer"></div>
+
+
+                    <button 
+                        type="submit" 
+                        class="btn btn-success btn-block mt-3"
+                    >
+                              نشر الاعلان
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--end Modal -->
+
+
+<!-- border account -->
+ 
+<body class="background">
+
+<div class="bord">
+  <div class="d-flex align-items-start flex-column bd-highlight picthur-email">
+    <div id="p-image"><img class="mb-auto p-2 bd-highlight" src="1dece2c8357bdd7cee3b15036344faf5.jpg" alt="no picture"></div>
+    <a class="p-2 bd-highlight change-image" href="#">تغيير الصورة</a>
+  </div>
+
+  <div class="input-container">
+    <div class="input-field">
+      <input type="text" id="username" required />
+      <label for="username" class="label">اسم المستخدم</label>
+      <div class="underline"></div>
+    </div>
+
+    <div class="input-field">
+      <input type="text" id="email" required />
+      <label for="email" class="label">البريد الإلكتروني</label>
+      <div class="underline"></div>
+    </div>
+
+    <!-- <div class="input-field">
+      <input type="text" id="password" required />
+      <label for="password" class="label">كلمة المرور</label>
+      <div class="underline"></div>
+    </div> -->
+
+    <div class="input-field">
+      <input type="text" id="phone" required />
+      <label for="phone" class="label">رقم الهاتف</label>
+      <div class="underline"></div>
+    </div>
+
+    <div class="input-field">
+      <input type="text" id="major" required />
+      <label for="major" class="label">التخصص الجامعي</label>
+      <div class="underline"></div>
+    </div>
+
+    <div class="button-edit">
+      <button>تعديل المعلومات</button>
+    </div>
+  </div>
+</div>
+
+
+ 
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

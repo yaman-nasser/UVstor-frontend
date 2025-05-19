@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="mainP.css">
+
+<!-- importing bootstrap  -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ 
+ <style>    .profile-img {
+  text-align: center;
+  margin-bottom: 20px;
+   
+}
+
+.profile-img img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  transition: border 0.3s ease;
+}
+
+.profile-img img:hover {
+  border-color: #007bff;
+}
+
+.img-note {
+  font-size: 12px;
+  color: #777;
+  margin-top: 5px;
+}</style>
+  </head>
+
+  <body class="background" >
+
+
+<div class="container">
+
+<section class="forms-section">
+
+  <img src="logo-removebg-preview.png" alt="" class="section-title">
+
+  <div class="forms">
+
+    <div class="form-wrapper is-active">
+      <button type="button" class="switcher switcher-login">
+        Login
+        <span class="underline"></span>
+      </button>
+         <!-- form Login -->
+      <div class="form form-login">
+
+        <fieldset>
+          <legend>Please, enter your email and password for login.</legend>
+          <div class="input-block">
+            <label for="login-email">E-mail</label>
+            <input id="email" type="email" required>
+          </div>
+          <div class="input-block">
+            <label for="login-password">Password</label>
+            <input id="password" type="password" required>
+          </div>
+        </fieldset>
+        <button onclick="checklogin()" type="submit" id="loginButton" class="btn-login" >Login</button>
+      </div>
+    </div>
+
+    <div class="form-wrapper">
+      <button type="button" class="switcher switcher-signup">
+        Sign Up
+        <span class="underline"></span>
+      </button>
+
+        <!-- form signup -->
+      <div id="signupForm" class="form form-signup">
+        <fieldset>
+
+          <legend>Please, enter your email, password and password confirmation for sign up.</legend>
+         
+         
+          <div class="input-block">
+          
+           <div class="profile-img">
+            <img id="preview" src="1dece2c8357bdd7cee3b15036344faf5.jpg" alt="Profile Image">
+            <input id="u-image" type="file" accept="image/*" style="display: none;">
+            <p class="img-note">اضغط لتغيير الصورة</p>
+        </div>
+
+          <label for="user-name">UserName</label>
+            <input id="u-name" type="user-name" required>
+
+
+            <label for="signup-email">E-mail</label>
+            <input id="u-email" type="email" required>
+
+          </div>
+          <div class="input-block">
+
+            <label for="signup-password">Password</label>
+            <input id="u-password" type="password" required>
+
+          </div>
+
+          <div class="input-block">
+
+            <label for="mobile-number">mobile number</label>
+            <input id="u-phone" type="mobile-number" required>            
+
+          </div>
+        </fieldset>
+
+        <button type="submit" id="signupButton" class="btn-signup" >Continue</button>
+        
+      </div>   
+         
+      
+    </div>
+  </div>
+
+</section>
+
+</div>
+
+</section>
+          
+   
+<script src="mainP.js"></script>
+<!-- <script type="text/javascript" src="particles.js"></script>
+<script type="text/javascript" src="app.js"></script> -->
+
+</div>
+
+</body>
+</html>

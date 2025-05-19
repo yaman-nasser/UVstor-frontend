@@ -1,0 +1,532 @@
+*{
+margin: 0;
+padding: 0;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+
+/* box-sizing: border-box; */
+}
+/* background */
+.background{
+background-size: cover;
+background-repeat: no-repeat; 
+background-color: #d2d2d2;
+
+}
+
+body{
+width: 100%;
+height: 100%;
+}
+
+.logo-r{
+width: 200px;
+position: relative;
+bottom: 35px;
+}
+
+.bi{
+font-size: 20px;
+
+}
+
+.border-p > p{
+border: 2px solid black;
+border: none;
+width: 890px;
+height: 120px;
+position:relative;
+left: 130px;
+display: block;
+word-wrap: break-word;
+}
+
+/* navbar  */
+
+.navbar{
+   background-color:#222831; 
+   box-shadow: 3px 3px 3px #222831;
+   border: 1px solid rgb(2, 2, 2);
+   border-radius: 5px;
+   border-color: 222831;
+   border-radius: 5px;
+   width: 100%;
+   height: 80px;
+  
+}
+
+
+   .navbar ul{
+   width: 100%;
+   display: flex;
+   list-style: none;
+   justify-content: flex-end;
+   align-items: center;
+   
+}
+
+   .navbar li{
+     height: 40px;
+       margin: 0 20px;
+}
+   
+   .navbar ul .btnnavbar{
+   height: 100%;
+   padding: 0 60px;
+   text-decoration: none;
+   display: flex;
+   align-items: center;
+   color: #d2d2d2;
+   border-radius: 10px;
+   border-style: none;
+   background-color:#222831 ;
+}
+
+
+   
+   .navbar li:first-child{
+   
+     margin-right: auto;
+}
+   
+   .navbar li:last-child{
+   
+     margin-left: auto;
+}
+   
+   .navbar ul .btnnavbar:hover{
+   background-color:rgb(92, 92, 92);
+}
+   /* end navbar  */
+
+   /* sidebar */
+#sidebar{
+box-sizing: border-box;
+height: 100%;
+width: 250px;
+padding: 5px 1em;
+border:  2px solid #292d32;
+border-top: 0;
+position: fixed;  /* تثبيت السايد بار  */
+top:81px;
+align-self: start;
+border-radius: 5px;
+background-color: #2c323c;
+}
+
+   #sidebar ul{
+   list-style: none;
+}
+    
+    #sidebar a, #sidebar .dropdown_btn{
+   border-radius: .5em;
+   padding: .85em;
+   text-decoration: none;
+   color: #d2d2d2;
+   display: flex;
+   align-items: center;
+   gap:1em;
+}
+   
+   .dropdown_btn{
+   width: 100%;
+   text-align: left;
+   background: none;
+   border:none;
+   font:inherit;
+   cursor: pointer;
+   border: none;
+   
+}
+   
+   #sidebar a span ,#sidebar .dropdown_btn span{
+   flex-grow: 1;
+}
+   
+   #sidebar a:hover ,#sidebar .dropdown_btn:hover{
+   background-color:rgb(92, 92, 92);
+}
+   
+   #sidebar .sub-menu{
+   display: grid;
+   grid-template-rows: 0fr ;
+   transition: 300ms ease-in-out;
+   
+    >div{
+     overflow: hidden;
+   }
+}
+   
+   #sidebar .sub-menu.show{
+    grid-template-rows: 1fr;
+}
+   
+   .dropdown_btn svg{
+   transition: 200ms ease;
+}
+   
+   .rotate svg:last-child{
+   rotate: 180deg;
+   
+}
+   
+   #sidebar .sub-menu a {
+     padding-left: 0em;
+}
+    /* end sidebar */
+
+  /* carousel */
+.carousel-item h3 , p{
+   color: #d2d2d2;
+}
+ 
+#carouselExampleCaptions{
+   background-color: #2c323c;
+   position: absolute;
+   width:75%;
+   left: 310px;
+   height: 30%;
+   border-radius: 15px;
+   border-style:double ;
+   top: 60px;
+}
+   
+  /* end carousel */
+
+   /* filterborder */
+.filterborder{
+border: 3px solid #038f97 ;
+border-radius: 10px;
+position: absolute;
+top: 300px;
+left: 270px;
+width: 80%;
+background-color: #038f97;
+
+}
+.filterborder .btn{
+border: none;
+background-color: #038f97;
+
+}
+
+.filterborder .btn:hover{
+
+  transition: all 200ms ease;
+}
+/* end filterborde */
+
+.post-card{
+   position: absolute;
+   top: 360px;
+   left: 100px;
+}
+
+.card-title{
+border: 2px solid red;
+border: none;
+width: 400px;
+height: 50px;
+position: relative;
+left: 345px;
+bottom: 300px;
+font-size: 30px;
+font-weight: bolder;
+}
+
+.card-text{
+position: relative;
+left: 340px;
+bottom: 295px;
+background-color: rgba(65, 64, 64, 0.25); 
+backdrop-filter: blur(10px); 
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+border-radius: 10px; 
+width: 640px;
+height: 150px;
+text-align: left;
+}
+
+.text-primary{
+border: none;
+height: 50px;
+width: 300px;
+position: relative;
+left: 300px;
+bottom: 295px;
+}
+.text-price{
+   text-shadow: #222831 0px 0px 10px;
+   position: absolute;
+   border: none;
+   height: 50px;
+width: 300px;
+left:  550px;
+top: 245px;
+color:  rgb(255, 255, 255);
+}
+
+.text-type{
+position: absolute;
+border: 2px solid red;
+border: none;
+height: 50px;
+width: 200px;
+left: 765px;
+bottom:  220px;
+
+}
+
+#bil{
+position: absolute;
+border: 2px solid red;
+border: none;
+left: 10px;
+top: 130px;
+font-size: 40px;
+cursor: pointer;
+}
+#bir{
+ 
+   position: absolute;
+   border: 2px solid red;
+   border: none;
+   left: 300px;
+   top: 130px;
+   font-size: 40px;
+   cursor: pointer;
+   }
+
+#bil:hover{
+transition: all 200ms ease;
+   
+}
+
+#bir:hover{
+   transition: all 200ms ease;
+      
+   }
+
+.body-post{
+background-color:#222831;
+height: 300px;
+}
+
+
+
+.btn {
+margin-top: 1px;
+margin-right: 70px;
+
+}
+
+#postsList {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+
+}
+
+#postsList {
+    display: flex; /* عرض المنشورات في صفوف */
+    flex-wrap: wrap; /* الانتقال إلى الصف التالي إذا لم تكفِ المساحة */
+    justify-content: center; /* توسيط المنشورات */
+    gap: 15px; /* إضافة مسافة بين المنشورات */
+}
+
+
+.filter-btn.active {
+    background-color: #222831;
+    color: #fff;
+}
+
+.post-card {
+    height: 275px;
+    width: 1000px; /* التحكم في العرض */
+    margin: 10px auto; /* وضع مسافة تلقائية لتوسيط المنشورات */
+    border-radius: 10px; /* زوايا مستديرة */
+    overflow: hidden; /* لمنع تجاوز المحتويات */
+}
+
+
+.post-card .card-body {
+    padding: 15px; /* تقليل المسافات الداخلية */
+    font-size: 20px; /* تقليل حجم النصوص */
+    text-align: center; /* محاذاة النصوص في المنتصف */
+}
+
+.post-card .btn {
+    font-size: 12px; /* تقليل حجم الأزرار */
+    padding: 5px 10px; /* تقليل المسافات داخل الأزرار */
+}
+
+
+.text-right {
+    text-align: right; /* محاذاة النص إلى اليمين */
+    
+}
+
+.image-container{
+
+   width: 250px; /* العرض المطلوب */
+   height: 300px; /* الطول المطلوب */
+   background-color:#222831; /* لون الحواف */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+   position:relative;
+   left: 50px;
+
+}
+
+.resize-image {
+   max-width: 100%; /* تأكد من أن العرض لا يتجاوز الحاوية */
+   max-height: 100%; /* تأكد من أن الطول لا يتجاوز الحاوية */
+   object-fit: contain; /* إضافة الحواف إذا كانت الصورة صغيرة */
+}
+
+.input-picture{
+border: 5px solid rgb(0, 0, 0);
+background-image: url( "add.png");
+background-size: cover;
+background-color: #d2d2d2;
+position: relative;
+width: 150px;
+height: 150px;
+z-index: 1;
+}
+
+.details-user{
+color: #d2d2d2;
+
+
+
+}
+
+.email{
+   display: block;
+   font-size:15px;
+}
+/* /************************************************************************ */
+.image-wrapper {
+   width: 100%; /* عرض كامل العرض المتاح */
+   height: 300px; /* تحديد ارتفاع ثابت للصورة */
+   background-color: #222831; /* لون خلفية عند وجود مساحات فارغة */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden; /* منع الصور من تجاوز الإطار */
+   position: relative;
+   padding: 20px;
+}
+
+.image-wrapper img {
+   max-width: 100%; /* الحفاظ على عرض الصورة بالكامل داخل الإطار */
+   max-height: 100%; /* الحفاظ على ارتفاع الصورة بالكامل داخل الإطار */
+   object-fit: contain; /* استخدام خاصية contain لمنع قص الصورة */
+   background-color: transparent; /* عدم إضافة خلفية للصورة نفسها */
+}
+
+
+.favorite-btn {
+  position: absolute;
+  top: 10px;
+  right: -60px; 
+  z-index: 10;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.10s ease, background-color 0.3s ease;
+}
+
+.favorite-btn:hover {
+  background-color: #f8d7da;
+  transform: scale(1.1);
+}
+
+.heart-icon {
+  font-size: 20px;
+  color: #d2d2d2;
+  transition: color 0.2s ease;
+}
+
+.heart-icon.liked {
+  color: #dc3545; /* قلب أحمر */
+}
+
+
+/* ⭐⭐ تنسيق النجوم للتقييم ⭐⭐ */
+.rating {
+  display: flex;
+  justify-content: center;     /* وسط الصفحة */
+  align-items: center;
+  gap: 10px;                   /* مسافة بين النجوم */
+  direction: rtl;              /* من اليمين لليسار */
+  margin-top: 10px;
+}
+
+/* إخفاء الـ input الأساسي */
+.rating input {
+  display: none;
+}
+
+/* تصميم النجوم */
+.rating label {
+  font-size: 30px;
+  color: #ccc;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+/* عند التمرير */
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #00b4be;
+  transform: scale(1.2);
+}
+
+/* عند التحديد */
+.rating input:checked ~ label {
+  color: #00b4be;
+}
+.chat-modal{
+   position: absolute;
+  top: 245px;
+  right: 30%;
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #00b4be;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.chat-modal:hover {
+  background-color: #0092a1;
+}
+/* ✅ زر عرض التفاصيل */
+.open-modal-btn {
+  position: absolute;
+  top: 245px;
+  right: 0%;
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #00b4be;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.open-modal-btn:hover {
+  background-color: #0092a1;
+}
+
+
+
+

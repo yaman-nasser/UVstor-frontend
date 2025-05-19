@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UVstore</title>
+    <!-- connect css -->
+    <link rel="stylesheet" href="admin.css">
+    <!-- connect js -->
+    <script type="text/javascript" src="admin.js" defer></script>
+    <!-- bootstrap css and js -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<style>
+     input[type="file"] {
+      display: none;
+    }
+
+    .upload-container {
+      width: 100%;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed #4caf50;
+      border-radius: 15px;
+      cursor: pointer;
+      background-color: #f0f0f0;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .upload-container:hover {
+      background-color: #e8f5e9;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .upload-icon {
+      font-size: 48px;
+      color: #4caf50;
+    }
+
+    .image-preview {
+      display: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .btn-submit {
+      background-color: #4caf50;
+      color: white;
+      border-radius: 8px;
+      padding: 12px 0;
+      width: 100%;
+      font-size: 18px;
+      transition: background-color 0.3s;
+    }
+
+    .btn-submit:hover {
+      background-color: #388e3c;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .modal-dialog {
+      max-width: 500px;
+      margin: 30px auto;
+    }
+
+    .images-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .image-item {
+      width: 120px;
+      height: 120px;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .image-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .remove-icon {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 20px;
+      color: #ff0000;
+      cursor: pointer;
+    }
+
+
+
+/* تحكم في العرض */
+.custom-modal {
+  max-width: 800px; /* عدل حسب رغبتك */
+  width: 100%;
+}
+
+/* ثبّت الطول */
+.custom-modal .modal-content {
+  height: 600px; /* عدل الطول حسب اللي يناسبك */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* خلي المحتوى الداخلي يتحرك بس ما يكبر */
+.custom-modal .modal-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+
+
+
+
+</style>
+
+</head>
+
+<body class="background">
+
+    <!-- navbar -->
+   <div class="navbar fixed-top">
+           <ul>
+            
+
+             <li><button onclick="location.href='admin.html'" class="btnnavbar">user-products</button></li>
+
+              <li><button onclick="location.href='user-details.html'" class="btnnavbar">user-details</button></li>
+
+              <li><button onclick="location.href='admin-study.html'" class="btnnavbar">admin-study</button></li>
+                            <li><button onclick="location.href='mo-admin.html'" class="btnnavbar">lost-products</button></li>
+
+<li id="log"><img  class="logo-r" src="logo-removebg-preview.png"></li>
+               
+
+           </ul>
+   </div>
+    <!-- end navbar -->
+
+
+
+
+ <!--        carousel          -->
+
+<div class="container" > 
+    <div id="carouselExampleCaptions" class="carousel slide my-4" data-bs-ride="carousel" >
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+        <div class="carousel-inner">
+            
+            <div class="carousel-item active">
+                <h3 style="text-align: center;">فترة الامتحانات النهائية للفصل الاول</h3 >
+                <p style="text-align: center;margin-top:  50px; font-size: 20px;">من : SUN 12-01-2025 <br>
+                    إلى :THU 23-01-2025</p>
+            </div>
+  
+            <div class="carousel-item">
+                <h3 style="text-align: center;"> الموعد النهائي لتسليم مشاريع التخرج</h3>
+                <p style="text-align: center; margin-top:  50px;font-size: 20px;">THU : 31-12</p>
+            </div>
+  
+            <div class="carousel-item"> 
+                 <h3 style="text-align: center;">آخر موعد للانسحاب من مادة أو من جميع مواد الفصل الاول </h3>
+                 <p style="text-align: center;margin-top:  50px;font-size: 20px;">من : THU 02-01-2025 <br>
+                    إلى :THU 02-01-2025</p>   
+              </div>
+            </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+          </button>
+
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+          </button>
+    </div>
+</div>
+
+ <!--    end carousel          -->
+
+
+
+<!-- Filter Buttons -->
+
+<div class="filterborder">
+<div class="container my-3 text-center">
+    <button class="btn btn-dark filter-btn active " data-filter="all">كل المنشورات</button>
+    <button class="btn btn-dark filter-btn" data-filter="accessories">اكسسوارات</button> 
+    <button class="btn btn-dark filter-btn" data-filter="food">طعام</button>
+    <button class="btn btn-dark filter-btn" data-filter="offers">عروض</button>
+    <button class="btn btn-dark filter-btn" data-filter="any">غير ذلك</button>
+</div>
+</div>
+
+<!-- end Filter Buttons -->
+
+<!-- post -->
+<div class="container mt-4">
+    <div id="postsList">
+        <!-- سيتم إضافة المنشورات هنا -->
+    </div>
+</div>
+<!--end post -->
+
+
+
+
+
+
+
+
+
+<!-- مودال عرض تفاصيل المنشور -->
+<div class="modal fade" id="viewPostModal" tabindex="-1" aria-labelledby="viewPostModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered custom-modal">
+    <div class="modal-content">
+      <div class="modal-body" id="viewPostContent">
+        <!-- هنا راح يتعبى الكارد عند الضغط -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="postModalLabel">إنشاء منشور جديد</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="modalPostForm" class="form-group">
+                    <div>
+                        <label for="modalTitleInput">العنوان</label>
+                        <input 
+                            type="text" 
+                            id="modalTitleInput"
+                            class="form-control" 
+                            placeholder="أدخل عنوان المنشور" 
+                            required 
+                        >
+                    </div>
+                    <div class="mt-3">
+                        <label for="modalDescriptionInput">الوصف</label>
+                        <textarea 
+                            id="modalDescriptionInput"
+                            class="form-control" 
+                            placeholder="أدخل وصف المنشور" 
+                            rows="4" 
+                            required
+                        ></textarea>
+                    </div>
+                    <div class="mt-3">
+                        <label for="modalPriceInput">السعر</label>
+                        <input 
+                            type="number" 
+                            id="modalPriceInput"
+                            class="form-control" 
+                            placeholder="أدخل السعر" 
+                            required 
+                        >
+                    </div>
+                    <div class="mt-3">
+                        <label for="modalPhoneInput">رقم الهاتف</label>
+                        <input 
+                            type="tel" 
+                            id="modalPhoneInput"
+                            class="form-control" 
+                            placeholder="أدخل رقم الهاتف" 
+                            required 
+                        >
+                    </div>
+                    <div class="mt-3">
+                        <label for="modalCategoryInput">الفئة</label>
+                        <select id="modalCategoryInput" class="form-control" required>
+                            <option value="accessories">اكسسوارات</option>
+                            <option value="food">طعام</option>
+                            <option value="offers">عروض</option>
+                            <option value="any">غير ذلك</option>
+                        </select>
+                    </div>
+                    <!-- تحميل الصور -->
+                    <div class="form-group">
+                        <label for="modalImageInput">صورة المنشور</label>
+                        <div class="upload-container" onclick="document.getElementById('modalImageInput').click()">
+                        <i id="uploadIcon" class="bi bi-upload upload-icon"></i>
+                        <img id="imagePreview" class="image-preview" src="" alt="Preview">
+                        </div>
+                        <input type="file" id="modalImageInput" accept="image/*" multiple>
+                    </div>
+
+                    <!-- عرض الصور المضافة -->
+                    <div class="images-container" id="imagesContainer"></div>
+
+
+                    <button 
+                        type="submit" 
+                        class="btn btn-success btn-block mt-3"
+                    >
+                              نشر الاعلان
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--end Modal -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+
+/********** تسجيل الخروج باستخدام SweetAlert **********/
+const userNameElement = document.getElementById('log');
+
+userNameElement.addEventListener('click', () => {
+  Swal.fire({
+    title: 'تأكيد تسجيل الخروج',
+    text: "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#d33',
+    cancelButtonColor: '#3085d6',
+    confirmButtonText: 'نعم، تسجيل الخروج',
+    cancelButtonText: 'إلغاء'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // حذف userId من localStorage
+      localStorage.removeItem('userId');
+
+      // توجيه المستخدم إلى الصفحة الرئيسية
+      window.location.href = 'C:\\Users\\yaman\\OneDrive\\Desktop\\proj-new\\p3-main\\main.html'; // غيّرها حسب المطلوب
+    }
+  });
+});
+
+
+
+
+
+
+    const imageInput = document.getElementById('modalImageInput');
+    const imagesContainer = document.getElementById('imagesContainer');
+    const selectedImages = []; // مصفوفة لتخزين الصور المرفوعة
+
+    imageInput.addEventListener('change', () => {
+      const files = imageInput.files;
+
+      for (const file of files) {
+        if (file.type.startsWith("image/")) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            // إنشاء عنصر للصورة الجديدة
+            const imageItem = document.createElement('div');
+            imageItem.classList.add('image-item');
+            imageItem.innerHTML = `
+              <img src="${e.target.result}" alt="Image Preview">
+              <i class="bi bi-x-circle remove-icon" onclick="removeImage(this)"></i>
+            `;
+            imagesContainer.appendChild(imageItem);
+        
+        // إضافة الصورة إلى المصفوفة
+        selectedImages.push(file);
+
+        };
+          reader.readAsDataURL(file);
+        }
+      }
+    });
+
+    // إزالة الصورة
+    function removeImage(icon) {
+      const imageItem = icon.parentElement;
+      imagesContainer.removeChild(imageItem);
+       // إزالة الصورة من المصفوفة
+    const index = selectedImages.findIndex((file) => file.name === fileName);
+    if (index !== -1) {
+    selectedImages.splice(index, 1);
+  }
+    }
+
+    
+   
+</script>
+</body>

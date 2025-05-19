@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UVstore</title>
+    <!-- connect css -->
+    <link rel="stylesheet" href="mo.css">
+    <!-- connect js -->
+    <script type="text/javascript" src="mo.js" defer></script>
+    <!-- bootstrap css and js -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script>
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.addEventListener('scroll', function () {
+  const btn = document.getElementById("scrollTopBtn");
+  if (window.scrollY > 300) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+});
+</script>
+
+    <style>
+      
+
+
+ 
+  
+
+
+
+    </style>
+</head>
+<body class="background">
+
+     <!-- navbar -->
+     <div class="navbar fixed-top">
+        <ul>
+          <li class="details-user"  id="logout-li" >
+     
+         </li>
+
+
+
+         
+
+            <div class="d-flex text-nowrap justify-content-end">
+              <button style=" background-color:#00ADB5" ;  type="button" class="btn btn-info" style="width: 200px;" data-bs-toggle="modal" data-bs-target="#addItemModal">
+                <i  style=" color: black;" class="bi bi-plus-circle-fill"></i>أضافة مفقودات أو موجودات
+              </button>
+            </div>
+
+          <li><button onclick="location.href='C:\\Users\\yaman\\OneDrive\\Desktop\\proj-new\\p3-main\\my-project.html#favorat'" class="btnnavbar"><i style="color: red;" class="bi bi-heart-fill"></i>المفضله</button></li>
+          <li><button onclick="location.href='C:\\Users\\yaman\\OneDrive\\Desktop\\proj-new\\p3-main\\my-project.html'" class="btnnavbar"><i style="color:gold " class="bi bi-star-fill"></i>أعلاناتي</button></li>
+
+          
+ <div class="d-flex text-nowrap justify-content-end">
+  <button 
+    type="button" 
+    class="btn btn-info" 
+    style="background-color: #00ADB5; width: 200px;" 
+    onclick="document.getElementById('foundSection').scrollIntoView({ behavior: 'smooth' });">
+    <i style="color: black;" class="bi bi-eye-fill"></i> عرض العناصر الموجودة
+  </button>
+</div>
+
+          <li onclick="location.href='C:\\Users\\yaman\\OneDrive\\Desktop\\proj-new\\p3-main\\header.html'"><img class="logo-r" src="logo-removebg-preview.png"></li>
+
+        </ul>
+</div>
+    <!-- end navbar -->
+
+
+    <!-- sidebar -->
+<nav id="sidebar">
+            <ul>
+                <li>
+                   <button onclick=togglesubmenu(this) class="dropdown_btn" id="b1">
+                      <div><i style="color: #00b4be;"  class="bi bi-cart4"></i></div>
+                      <span>المنتجات</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+                   </button>
+            
+              <ul class="sub-menu">
+                  <div>
+                     <li ><a  onclick="location.href='C:\\Users\\yaman\\OneDrive\\Desktop\\proj-new\\p3-main\\header.html'" href="#"><i style="color: #00b4be;" class="bi bi-infinity"></i>كل الاقسام</a></li>
+                     <li ><a  data-bs-toggle="modal" data-bs-target="#postModal" href="#"><i style="color: #00b4be;" class="bi bi-plus-circle"></i>أضافة منتج</a></li>
+                     <li><a onclick="location.href='C:\\Users\\yaman\\OneDrive\\Desktop\\proj-new\\p3-main\\my-project.html'" href="#"><i style="color: #00b4be;" class="bi bi-backpack-fill"></i>منتجاتي</a></li>
+                  </div>
+              </ul>
+                </li>
+            
+                 <li>
+                   <button onclick=togglesubmenu(this) class="dropdown_btn" id="b2">
+                        <div><i style="color: #00b4be;" class="bi bi-person"></i></div>
+                        <span>الخدمات</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+                   </button>
+              <ul class="sub-menu">
+            
+                  <div>
+                        <li><a onclick="location.href='C:\\Users\\yaman\\OneDrive\\Desktop\\proj-new\\p3-main\\study.html'" href="#"><i style="color: #00b4be;" class="bi bi-book"></i>تبادل الكتب</a></li>
+                        <!-- <li><a href="#"><i style="color: #00b4be;" class="bi bi-journals"></i>خدمات دراسية</a></li> -->
+                        <li><a href="#"><i style="color: #00b4be;" class="bi bi-bag-x-fill"></i>المفقودات</a></li>
+                  </div>
+              </ul>
+                </li>
+            
+                <li>
+                  <button onclick=togglesubmenu(this) class="dropdown_btn" id="b3">
+                         <div> <i style="color: #00b4be;" class="bi bi-gear"></i></div>
+                         <span>الاعدادات</span>
+                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+                  </button>
+                <ul class="sub-menu">
+                  <div>
+                    <li><a onclick="location.href='C:\\Users\\yaman\\OneDrive\\Desktop\\proj-new\\p3-main\\account.html'" href="#"><i style="color: #00b4be;" class="bi bi-person-circle"></i>حسابي</a></li>
+                    <!-- <li><a href="#"><i style="color: #00b4be;" class="bi bi-globe"></i> english/عربي</a></li> -->
+                    <li><a href="#"><i style="color: #00b4be;" class="bi bi-moon-fill"></i>الوضع</a></li>
+                  </div>
+   </ul>
+  </li> 
+ </ul>
+</nav> 
+    <!-- end sidebar -->
+            
+    <!-- نموذج إضافة مفقودات -->
+    <div class="modal fade" id="addItemModal" tabindex="-1" aria-labelledby="addItemModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addItemModalLabel">إضافة مفقودات جديدة</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">النوع</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="itemType" id="lostItem" checked>
+                                <label class="form-check-label" for="lostItem">
+                                    فقدت شيئاً
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="itemType" id="foundItem">
+                                <label class="form-check-label" for="foundItem">
+                                    وجدت شيئاً
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemTitle" class="form-label">عنوان الإعلان</label>
+                            <input type="text" class="form-control" id="itemTitle" placeholder="مثال: محفظة سوداء ضائعة" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemDescription" class="form-label">التفاصيل</label>
+                            <textarea class="form-control" id="itemDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemLocation" class="form-label">المكان</label>
+                            <input type="text" class="form-control" id="itemLocation" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemDate" class="form-label">التاريخ</label>
+                            <input type="date" class="form-control" id="itemDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemImage" class="form-label">صورة (اختياري)</label>
+                            <input class="form-control" type="file" id="itemImage">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userContact" class="form-label">معلومات التواصل</label>
+                            <input type="text" class="form-control" id="userContact" required>
+                            <div class="form-text">رقم الهاتف أو البريد الإلكتروني</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">نشر الإعلان</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-page-content">
+        <div class="container py-3">
+       
+      
+          <!-- كروت المفقودات -->
+          <div id="lost-items-section" class=" row mb-4"></div>
+      
+          <!-- كروت الموجودات -->
+          <div id="found-items-section" class="row mb-4"></div>
+        </div>
+    </div>
+
+
+
+<button onclick="scrollToTop()" id="scrollTopBtn" title="الرجوع للأعلى">
+    ⬆️
+</button>
+
+
+
+
+
+
+
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+   
+</body>
+</html>

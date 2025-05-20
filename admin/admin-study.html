@@ -173,7 +173,14 @@
 #postsList {
     margin-top: -50px;
 }
-
+ .logout-btn{
+            cursor: pointer;
+             font-size: 30px;
+              color: #f8f8f8;
+               position: absolute;
+                top: 15px;
+                 left: 20px;
+        }
 </style>
 </head>
 
@@ -181,18 +188,17 @@
 
 
     <!-- navbar -->
-     <div class="navbar fixed-top">
+     <div class="navbar d-flex justify-content-between fixed-top">
            <ul>
            
-             <li><button onclick="location.href='admin-study.html'" class="btnnavbar">admin-study</button></li> 
-            <li><button onclick="location.href='user-details.html'" class="btnnavbar">user-details</button></li>
-             
+              <li><button onclick="location.href='admin-study.html'" class="btnnavbar">admin-study</button></li> 
+              <li><button onclick="location.href='user-details.html'" class="btnnavbar">user-details</button></li>
               <li><button onclick="location.href='admin.html'" class="btnnavbar">user-products</button></li>
-                            <li><button onclick="location.href='mo-admin.html'" class="btnnavbar">lost-products</button></li>
+              <li><button onclick="location.href='mo-admin.html'" class="btnnavbar">lost-products</button></li>
 
-                
               <li id="log"><img  class="logo-r" src="logo-removebg-preview.png"></li>
-               
+
+              <i id="logout-btn" class="bi bi-box-arrow-left logout-btn"></i>
 
            </ul>
    </div>
@@ -357,7 +363,7 @@
 
 
   /********** تسجيل الخروج باستخدام SweetAlert **********/
-const userNameElement = document.getElementById('log');
+const userNameElement = document.getElementById('logout-btn');
 
 userNameElement.addEventListener('click', () => {
   Swal.fire({

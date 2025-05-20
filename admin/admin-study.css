@@ -290,8 +290,8 @@ overflow: auto;
        width: 100%;
        display: flex;
        list-style: none;
-       justify-content: flex-end;
        align-items: center;
+        justify-content: center;
        
     }
     
@@ -310,16 +310,7 @@ overflow: auto;
        border-style: none;
        background-color:#222831 ;
     }
-       
-       .navbar li:first-child{
-       
-         margin-right: auto;
-    }
-       
-       .navbar li:last-child{
-       
-         margin-left: auto;
-    }
+      
        
        .navbar ul .btnnavbar:hover{
        background-color:rgb(92, 92, 92);

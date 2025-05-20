@@ -43,73 +43,85 @@ switchers.forEach(item => {
 });
 
 
-
+// Image preview and upload functionality
 const imageInput = document.getElementById("u-image");
-  const preview = document.getElementById("preview");
+const preview = document.getElementById("preview");
 
-  // عند النقر على الصورة، افتح اختيار الصورة
-  preview.addEventListener("click", () => {
-    imageInput.click();
-  });
+// When clicking on the image, open the file selector
+preview.addEventListener("click", () => {
+  imageInput.click();
+});
 
-  // عند اختيار صورة، اعرض المعاينة
-  imageInput.addEventListener("change", () => {
-    const file = imageInput.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        preview.src = reader.result;
-      };
-      reader.readAsDataURL(file);
-    } else {
-      preview.src = "1dece2c8357bdd7cee3b15036344faf5.jpg"; // الصورة الافتراضية
-    }
-  });
+// When selecting an image, display the preview
+imageInput.addEventListener("change", () => {
+  const file = imageInput.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      preview.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  } else {
+    preview.src = "1dece2c8357bdd7cee3b15036344faf5.jpg"; // Default image
+  }
+});
 
-  // عند الضغط على زر التسجيل
-  document.getElementById("signupButton").addEventListener("click", async (e) => {
-    e.preventDefault();
+// When pressing the register button
+document.getElementById("signupButton").addEventListener("click", async (e) => {
+  e.preventDefault();
 
-    const formData = new FormData();
-    formData.append("Name", document.getElementById("u-name").value);
-    formData.append("Email", document.getElementById("u-email").value);
-    formData.append("Password", document.getElementById("u-password").value);
-    formData.append("Phone", document.getElementById("u-phone").value);
-    // formData.append("Major", document.getElementById("u-major").value);
+  // Validate required fields
+  const name = document.getElementById("u-name").value;
+  const email = document.getElementById("u-email").value;
+  const password = document.getElementById("u-password").value;
+  const phone = document.getElementById("u-phone").value;
 
-    // إضافة الصورة - إذا اختار المستخدم صورة نرسلها، وإذا لا، نرسل الصورة الافتراضية
-    if (imageInput.files.length > 0) {
-      formData.append("Image", imageInput.files[0]);
-    } else {
-      // تحميل الصورة الافتراضية وتحويلها إلى Blob
-      const defaultImg = await fetch("1dece2c8357bdd7cee3b15036344faf5.jpg");
-      const blob = await defaultImg.blob();
-      const file = new File([blob], "1dece2c8357bdd7cee3b15036344faf5.jpg", { type: blob.type });
-      formData.append("Image", file);
-    }
+  if (!name || !email || !password || !phone) {
+    alert("الرجاء إدخال الحقول المطلوبة: الاسم، البريد الإلكتروني، كلمة المرور، رقم الهاتف");
+    return;
+  }
 
-    try {
-      const response = await fetch("https://localhost:7259/api/User", {
-        method: "POST",
-        body: formData,
-      });
+  const formData = new FormData();
+  formData.append("Name", name);
+  formData.append("Email", email);
+  formData.append("Password", password);
+  formData.append("Phone", phone);
 
+  // Add image - if the user selected an image, send it. If not, don't include an image.
+  // The API will handle the case when no image is provided
+  if (imageInput.files.length > 0) {
+    formData.append("Image", imageInput.files[0]);
+  }
+  // No need to send default image - the backend will handle users without images
+
+  try {
+    const response = await fetch("https://localhost:7259/api/User", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (response.ok) {
       const result = await response.json();
-      if (response.ok) {
-			    //////////////////////////////////
+      
+       //////////////////////////////////
 			   // إذا كانت بيانات تسجيل الدخول صحيحة، خزن الـ userId في localStorage
-			   const userId = data.id;
+			   const userId = result.id;
 			   localStorage.setItem('userId', userId);  
 			   //////////////////////////////////
-            alert(`Welcome, ${email}`)
-            // Redirect to the next page
-		   window.location.href = 'header.html';
-        }
-    } catch (error) {
-      console.error("Error:", error);
-      alert("An error occurred while creating the user.");
+      
+      alert(`مرحباً، ${name}! تم إنشاء حسابك بنجاح.`);
+      // Redirect to the next page
+      window.location.href = 'header.html';
+    } else {
+      const errorData = await response.json();
+      alert(`خطأ: ${errorData.message || "حدث خطأ أثناء إنشاء المستخدم."}`);
     }
-  });
+  } catch (error) {
+    console.error("Error:", error);
+    alert("حدث خطأ أثناء الاتصال بالخادم.");
+  }
+});
+
 
 
 

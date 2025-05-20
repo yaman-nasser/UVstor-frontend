@@ -16,17 +16,14 @@ body {
  /* navbar  */
     
     .navbar{
-       background-color:#222831; 
+      background-color:#222831; 
        box-shadow: 3px 3px 3px #222831;
        border: 1px solid rgb(2, 2, 2);
        border-radius: 5px;
        border-color: 222831;
        border-radius: 5px;
        width: 100%;
-      
 }
-    
-    
        .navbar ul{
        width: 100%;
        display: flex;
@@ -40,7 +37,7 @@ body {
          height: 40px;
 }
        
-       .navbar ul .btnnavbar{
+        .navbar ul .btnnavbar{
        height: 100%;
        padding: 0 60px;
        text-decoration: none;
@@ -50,18 +47,8 @@ body {
        border-radius: 10px;
        border-style: none;
        background-color:#222831 ;
-}
-       
-       .navbar li:first-child{
-       
-         margin-right: auto;
-}
-       
-       .navbar li:last-child{
-       
-         margin-left: auto;
-}
-       
+    }
+   
        .navbar ul .btnnavbar:hover{
        background-color:rgb(92, 92, 92);
 }
@@ -69,8 +56,7 @@ body {
     width: 200px;
     position: relative;
     bottom: 35px;
-    cursor: pointer;
-}
+    }
        /* end navbar  */
 /* تنسيق السايد بار */
 #sidebar {

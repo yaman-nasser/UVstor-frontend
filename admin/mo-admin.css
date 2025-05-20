@@ -78,22 +78,12 @@
        border-style: none;
        background-color:#222831 ;
     }
-       
-       .navbar li:first-child{
-       
-         margin-right: auto;
-    }
-       
-       .navbar li:last-child{
-       
-         margin-left: auto;
-    }
-       
+
        .navbar ul .btnnavbar:hover{
        background-color:rgb(92, 92, 92);
     }
        /* end navbar  */
-    
+
        /* sidebar */
     #sidebar{
     box-sizing: border-box;
@@ -286,14 +276,7 @@ background: #038f97;
 }
        
        /* التعديلات الجديدة */
-       .navbar {
-           position: fixed;
-           top: 0;
-           left: 0;
-           right: 0;
-           z-index: 1030;
-           height: 72px;
-       }
+      
        
        #sidebar {
            position: fixed;

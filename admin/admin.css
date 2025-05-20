@@ -82,16 +82,7 @@ word-wrap: break-word;
 }
 
 
-   
-   .navbar li:first-child{
-   
-     margin-right: auto;
-}
-   
-   .navbar li:last-child{
-   
-     margin-left: auto;
-}
+
    
    .navbar ul .btnnavbar:hover{
    background-color:rgb(92, 92, 92);

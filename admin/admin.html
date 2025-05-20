@@ -122,6 +122,14 @@
   flex: 1 1 auto;
   overflow-y: auto;
 }
+ .logout-btn{
+            cursor: pointer;
+             font-size: 30px;
+              color: #f8f8f8;
+               position: absolute;
+                top: 15px;
+                 left: 20px;
+        }
 
 
 
@@ -146,6 +154,7 @@
 
 <li id="log"><img  class="logo-r" src="logo-removebg-preview.png"></li>
                
+              <i id="logout-btn" class="bi bi-box-arrow-left logout-btn"></i>
 
            </ul>
    </div>
@@ -340,7 +349,7 @@
 <script>
 
 /********** تسجيل الخروج باستخدام SweetAlert **********/
-const userNameElement = document.getElementById('log');
+const userNameElement = document.getElementById('logout-btn');
 
 userNameElement.addEventListener('click', () => {
   Swal.fire({

@@ -33,7 +33,14 @@ window.addEventListener('scroll', function () {
 
  
   
-
+ .logout-btn{
+            cursor: pointer;
+             font-size: 30px;
+              color: #f8f8f8;
+               position: absolute;
+                top: 15px;
+                 left: 20px;
+        }
 
 
     </style>
@@ -46,13 +53,12 @@ window.addEventListener('scroll', function () {
            
              <li><button onclick="location.href='admin-study.html'" class="btnnavbar">admin-study</button></li> 
             <li><button onclick="location.href='user-details.html'" class="btnnavbar">user-details</button></li>
-             
               <li><button onclick="location.href='admin.html'" class="btnnavbar">user-products</button></li>
-                            <li><button onclick="location.href='mo-admin.html'" class="btnnavbar">lost-products</button></li>
+             <li><button onclick="location.href='mo-admin.html'" class="btnnavbar">lost-products</button></li>
 
-                
               <li id="log"><img  class="logo-r" src="logo-removebg-preview.png"></li>
-               
+              <i id="logout-btn" class="bi bi-box-arrow-left logout-btn"></i>
+
 
            </ul>
    </div>
@@ -152,7 +158,7 @@ window.addEventListener('scroll', function () {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
    <script>/********** تسجيل الخروج باستخدام SweetAlert **********/
-const userNameElement = document.getElementById('log');
+const userNameElement = document.getElementById('logout-btn');
 
 userNameElement.addEventListener('click', () => {
   Swal.fire({
